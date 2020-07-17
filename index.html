@@ -18,6 +18,10 @@
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Bellota&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Pompiere&display=swap" rel="stylesheet">
+
+
+	<link class="icon" rel="icon" type="image/png" href="images/active.png">
+
 	<!-- JS, Popper.js, and jQuery -->
 	<script src="https://use.fontawesome.com/4808160232.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -130,7 +134,7 @@
 	<div class="top-spacer"></div>
 	<div class="container shadow rounded p-3 mb-5">
 		<div class="intro-block">
-			<img class="custom-thumbnail img-thumbnail" src="https://avatars2.githubusercontent.com/u/1501827?s=460&u=6d006e9e6b4204c75213eecaa4d36b43fd1b00f2&v=4">
+			<img class="custom-thumbnail img-thumbnail" src="images/harikrushna.jpeg">
 			<h2 class="name-block text-center">
 				<div class="fullname">Harikrushna Vasantbhai Adiecha</div>
 				<small class="designation small">Software Engineer @ Improwised Technology</small>
@@ -184,6 +188,24 @@
 				</a>
 			</div>
 		</div>
-	</div>	
+	</div>
+
+	<script type="text/javascript">
+		const focusTab = () => {
+			$('title').text('Harikrushna: About Me');
+			$('link.icon').attr('href', 'images/active.png')
+		}
+
+		const blurTab = () => {
+			$('title').text('Harikrushna: [Waiting]');
+			$('link.icon').attr('href', 'images/passive.png')
+		}
+
+
+		$(window).focus(focusTab);
+		$(window).blur(blurTab);
+
+	</script>
+
 </body>
 </html>
