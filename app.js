@@ -46,7 +46,8 @@ const app = new Vue({
   data: {
     profile: {},
     skills: [],
-    show_only: 'limited',
+    show_projects: 'limited',
+    show_experiences: 'limited',
     limit: 3
   },
   mounted: async function() {

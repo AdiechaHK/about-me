@@ -75,8 +75,10 @@
       "title": "Log Monitoring System",
       "description": "It’s a system that collects logs of web application and save them into a database Instead of typical text files, in the same system we also provide tabular view of logs and developer can apply filters on them so debugging will be easy",
       "type": "Final Year Project",
-      "started":"01-01-2012",
-      "worked_till": "06-01-2012",
+      "year": 2012,
+      "months_worked": 6,
+      "team_size": 4,
+      "role": "Equal",
       "skills": ["Java", "MongoDB", "JettyServer"]
     }, {
       "title": "Steganography with image file",

@@ -127,9 +127,10 @@
 					</div>
 					<h4 class="text-xl text-gray-700 mb-4 pt-4 pl-4">Experience</h4>
 					<div
-						v-for="exp in sorted_experience"
-						:key="exp.from"
-						class="rounded-b-xl space-y-2 p-4 border-t border-gray-400 pt-2 hover:bg-gray-100">
+						v-for="(exp, indx) in sorted_experience"
+						:key="indx"
+						v-show="indx < limit || show_experiences == 'all'"
+						class="duration-300 rounded-b-xl space-y-2 p-4 border-t border-gray-400 pt-2 hover:bg-gray-100">
 						<div class="float-right inline-block px-2 py-0 rounded-lg bg-gray-300 text-gray-500">{{ exp | months | period }}</div>
 						<h5 class="text-gray-800 text-lg font-bold">{{exp.designation}}</h5>
 						<div class="text-gray-600">
@@ -148,6 +149,15 @@
 							{{skill}}
 						</div>
 					</div>
+					<div class="rounded-b-xl space-y-2 p-4 border-t border-gray-400 pt-2 text-center">
+						<div v-if="sorted_experience.length > limit">
+							<button v-if="show_experiences!='all'" @click="show_experiences='all'" class="outline-none border hover:shadow-lg hover:bg-gray-100 duration-300 hover:border-blue-600 hover:text-blue-600 text-gray-500 px-4 py-2 rounded-lg">Show all</button>
+							<button v-if="show_experiences=='all'" @click="show_experiences='limited'" class="outline-none border hover:shadow-lg hover:bg-gray-100 duration-300 hover:border-blue-600 hover:text-blue-600 text-gray-500 px-4 py-2 rounded-lg">Show less</button>
+						</div>
+						<div v-if="sorted_experience.length === 0">
+							No projects to show
+						</div>
+					</div>
 				</div>
 				<div class="rounded-xl shadow-lg bg-gray-200" v-if="profile.projects">
 					<div class="float-right inline-block pt-4 pr-4">
@@ -158,8 +168,8 @@
 					<div
 						v-for="(project, indx) in filtered_projects"
 						:key="indx"
-						v-show="indx < limit || show_only == 'all'"
-						class="rounded-b-xl space-y-2 p-4 border-t border-gray-400 pt-2 hover:bg-gray-100 duration-300">
+						v-show="indx < limit || show_projects == 'all'"
+						class="duration-300 rounded-b-xl space-y-2 p-4 border-t border-gray-400 pt-2 hover:bg-gray-100">
 						<div class="float-right inline-block px-2 py-0 rounded-lg bg-gray-300 text-gray-500">{{ project.type }} </div>
 						<h5 class="text-gray-800 text-lg font-bold">{{ project.title }}</h5>
 						<div class="text-gray-600">
@@ -173,7 +183,13 @@
 						</div>
 					</div>
 					<div class="rounded-b-xl space-y-2 p-4 border-t border-gray-400 pt-2 text-center">
-						<button class="border hover:shadow-lg hover:bg-gray-100 duration-300 hover:border-blue-600 hover:text-blue-600 text-gray-500 px-4 py-2 rounded-lg">Show all</button>
+						<div v-if="filtered_projects.length > limit">
+							<button v-if="show_projects!='all'" @click="show_projects='all'" class="outline-none border hover:shadow-lg hover:bg-gray-100 duration-300 hover:border-blue-600 hover:text-blue-600 text-gray-500 px-4 py-2 rounded-lg">Show all</button>
+							<button v-if="show_projects=='all'" @click="show_projects='limited'" class="outline-none border hover:shadow-lg hover:bg-gray-100 duration-300 hover:border-blue-600 hover:text-blue-600 text-gray-500 px-4 py-2 rounded-lg">Show less</button>
+						</div>
+						<div v-if="filtered_projects.length === 0">
+							No projects to show
+						</div>
 					</div>
 				</div>
 				<div class="rounded-xl shadow-lg bg-gray-200">
