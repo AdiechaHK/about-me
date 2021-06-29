@@ -134,7 +134,7 @@
 						<div class="float-right inline-block px-2 py-0 rounded-lg bg-gray-300 text-gray-500">{{ exp | months | period }}</div>
 						<h5 class="text-gray-800 text-lg font-bold">{{exp.designation}}</h5>
 						<div class="text-gray-600">
-							at
+							At
 							<a :href="exp.website" v-if="exp.website" class="text-blue-500 underline">{{exp.employer}}</a>
 							<span v-else class="">{{exp.employer}}</span>
 							, {{exp.city}}, {{exp.state}}, {{exp.country}}
@@ -149,13 +149,15 @@
 							{{skill}}
 						</div>
 					</div>
-					<div class="rounded-b-xl space-y-2 p-4 border-t border-gray-400 pt-2 text-center">
+					<div
+						v-if="sorted_experience.length > limit || sorted_experience.length === 0"
+						class="rounded-b-xl space-y-2 p-4 border-t border-gray-400 pt-2 text-center">
 						<div v-if="sorted_experience.length > limit">
 							<button v-if="show_experiences!='all'" @click="show_experiences='all'" class="outline-none border hover:shadow-lg hover:bg-gray-100 duration-300 hover:border-blue-600 hover:text-blue-600 text-gray-500 px-4 py-2 rounded-lg">Show all</button>
 							<button v-if="show_experiences=='all'" @click="show_experiences='limited'" class="outline-none border hover:shadow-lg hover:bg-gray-100 duration-300 hover:border-blue-600 hover:text-blue-600 text-gray-500 px-4 py-2 rounded-lg">Show less</button>
 						</div>
 						<div v-if="sorted_experience.length === 0">
-							No projects to show
+							--- No Experience to Show ---
 						</div>
 					</div>
 				</div>
@@ -182,13 +184,15 @@
 							{{skill}}
 						</div>
 					</div>
-					<div class="rounded-b-xl space-y-2 p-4 border-t border-gray-400 pt-2 text-center">
+					<div
+						v-if="filtered_projects.length > limit ||filtered_projects.length === 0"
+						class="rounded-b-xl space-y-2 p-4 border-t border-gray-400 pt-2 text-center">
 						<div v-if="filtered_projects.length > limit">
 							<button v-if="show_projects!='all'" @click="show_projects='all'" class="outline-none border hover:shadow-lg hover:bg-gray-100 duration-300 hover:border-blue-600 hover:text-blue-600 text-gray-500 px-4 py-2 rounded-lg">Show all</button>
 							<button v-if="show_projects=='all'" @click="show_projects='limited'" class="outline-none border hover:shadow-lg hover:bg-gray-100 duration-300 hover:border-blue-600 hover:text-blue-600 text-gray-500 px-4 py-2 rounded-lg">Show less</button>
 						</div>
 						<div v-if="filtered_projects.length === 0">
-							No projects to show
+							--- No Projects to Show ---
 						</div>
 					</div>
 				</div>
