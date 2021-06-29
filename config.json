@@ -1,0 +1,15 @@
+{
+  "theme": "default",
+  "experience": {
+    "show": true,
+    "date_format": "YYYY",
+    "compute_diff": true,
+    "diff_format": "Y year(s) M month(s)"
+  },
+  "meta": {
+    "active_title": "Harikrushna: About Me",
+    "active_pic": "images/offline-icon.png",
+    "passive_title": "Harikrushna: [Waiting]",
+    "passive_pic": "images/offline-icon-2.png"
+  }
+}

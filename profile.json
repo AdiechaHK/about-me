@@ -1,0 +1,208 @@
+{
+  "name": "Harikrushna V. Adiecha",
+  "designation": "Senior Software Engineer",
+  "employer": "Improwised Technologies Pvt. Ltd.",
+  "city": "Rajkot",
+  "contact": {
+    "mobile": "+91-903-331-9723",
+    "email": "adiechahari@gmail.com"
+  },
+  "about_me": "I'm Harikrushna, my friends call me HK. I like to work with cutting edge technology, especially logical challenges. I prefer to work in a linux environment from my college days. I am a fullstack developer but my personal preference is backend work.",
+  "skills": {
+    "backend": {
+      "C": 60,
+      "C++": 50,
+      "PHP": 80,
+      "Laravel": 80,
+      "CodeIgnitor": 60,
+      "Python": 75,
+      "Scrapy": 72,
+      "FastAPI": 70,
+      "Go-lang": 30,
+      "NodeJS": 60,
+      "ExpressJS": 60,
+      "Java": 60,
+      "Sturts": 50,
+      "Hibernate": 50,
+      "JettyServer": 30
+    },
+    "frontend": {
+      "HTML": 70,
+      "CSS": 70,
+      "tailwindcss": 40,
+      "bootstrap": 60,
+      "Javascript": 80,
+      "VueJs": 80,
+      "Angular": 60,
+      "Jquery": 80
+    },
+    "database": {
+      "MySql": 80,
+      "PostgreSql": 80,
+      "Redis": 70,
+      "MongoDB": 50,
+      "ElasticSearch": 40
+    },
+    "other": {
+      "Git": 70,
+      "Github": 70,
+      "CircleCI": 55,
+      "GitlabCI": 55,
+      "GithubActions": 50,
+      "Docker": 60,
+      "DockerHub": 40,
+      "DigitalOcean": 60,
+      "ApachePulsar": 60,
+      "AWS-EC2": 40,
+      "AWS-S3": 60,
+      "AWS-SQS": 50,
+      "Heroku": 70,
+      "PayPal": 30,
+      "Authorized.NET": 30,
+      "CCAvanue": 30,
+      "AutomatedTesting": 50
+    }
+  },
+  "hobbies": ["Electronics Experiments", "Wood work", "Pencil Drawing"],
+  "education": [{
+    "degree": "B.E. (Computer Science & Engineering)",
+    "institute": "Om Shanti Engineering Collage, Rajkot",
+    "university": "Gujarat Technological University",
+    "passing_year": 2012
+  }],
+  "projects":[
+    {
+      "title": "Log Monitoring System",
+      "description": "It’s a system that collects logs of web application and save them into a database Instead of typical text files, in the same system we also provide tabular view of logs and developer can apply filters on them so debugging will be easy",
+      "type": "Final Year Project",
+      "started":"01-01-2012",
+      "worked_till": "06-01-2012",
+      "skills": ["Java", "MongoDB", "JettyServer"]
+    }, {
+      "title": "Steganography with image file",
+      "description": "This project is to embed message into an image file. in this project merger and separate text message with Image file using LSB technique.",
+      "type": "Techfest Project",
+      "skills": ["C", "LBS Technique"]
+    }, {
+      "title": "10xEngineer",
+      "description": "This project is an e-learning project for engineers, in which i worked on quiz module, folder structure tree using javascript, image crop function, and many more small task.",
+      "type": "Company Project",
+      "skills": ["Javascript", "NodeJS", "ExpressJS", "MongoDB", "Redis", "Git", "Github"]
+    }, {
+      "title": "Bingo Game",
+      "description": "It’s a game for two players, there are A-Y laters in 5x5 matrix randomly. each player mark each later one by one. later will be marked in both players. and when any line is completed it gives one point. 5 points make player win.",
+      "type": "Timepass",
+      "skills": ["PHP", "MongoDB", "LongPolling", "Git", "Github"]
+    }, {
+      "title": "Whack a mole - Game",
+      "description": "This game I created as assignment for canvass interview. it allow user to play whack a mole up to 10 levels. also holds the history of players and show top 10.",
+      "type": "Interview Assignment",
+      "skills": ["Java", "Sturts", "Hibernate", "Git", "Heroku", "PostgreSql"]
+    }, {
+      "title": "Canvass all in one marketing plateform",
+      "description": "This is all in one marketing platform to do marketing activity like mass mailing (with custom variables), drip marketing, sms marketing, birthday offers, etc. in that I worked in drip marketing, email editor, themes, html email upload, and many more crucial part of the product",
+      "type": "Company Product",
+      "skills": ["Java", "Sturts", "Hibernate", "Git", "Heroku", "PostgreSql"]
+    }, {
+      "title": "InGenius Youth",
+      "description": "This is a freelancing project, basic website about sharing informations, there is a community to post your own post as well as debate on particular topic. there is also functionality to have blog and media, as any event happens it get updated, there is functionality to like and comment for blog post, community post and debates",
+      "type": "Freelance Project",
+      "skills": ["PHP", "CodeIgnitor", "MySql"]
+    }, {
+      "title": "Family Tree",
+      "description": "This project contains the basic informations of families and details of family members. Which is used for several purpose of raghuvanshi sodha religious. It's kind of social web site which designed only for particular community. Also holds few details of history and other stuffs associated with that community.",
+      "type": "Local Project",
+      "skills": ["PHP", "CodeIgnitor", "MySql"]
+    }, {
+      "title": "Email Scrubbing Application",
+      "description": "This project validates email addresses (in bulk either by csv or using api) in two phases. first phase will check all basic things like syntax, high risk domain, duplicate entry etc, and second phase will check valid mx record, actual mail send and bounced check using ima protocol (IMAP) and Simple Mail Transfer Protocol (SMTP), by applying custom header tags. this one is one of the most challenging project which I ever done. also feeling proud to make this.",
+      "type": "Freelance Project",
+      "skills": ["PHP", "Laravel", "MySql", "IMAP", "SMTP", "AngularJS"]
+    }, {
+      "title": "Alhuda flexible - Teaching schedule management",
+      "description": "This project muslim community project for learning their holy subjects. student can book lesson as per his/her convenience and tutor will accept it’s scheduled lesson, and student, tutor and admin can communicate with each other using message module",
+      "type": "Freelance Work",
+      "skills": ["PHP", "MySql", "Payment", "PayPal", "Authorized.NET"]
+    }, {
+      "title": "Steganography with audio file",
+      "description": "This project is to embed message into an audio file. in this project merger and separate text message with audio file using LSB technique.",
+      "type": "Student Project",
+      "skills": ["Java", "Struts", "Hibernate", "PostgreSql", "Git", "Heroku"]
+    }, {
+      "title": "Online Examination",
+      "description": "This project is to take any MCQ type of exam efficiently and this is just started as minimum viable product and we’ll be improve it gradually",
+      "type": "Company Product",
+      "skills": ["NodeJS", "ExpressJS", "PostgreSql", "AngularJS"]
+    }, {
+      "title": "Online Trading System",
+      "description": "This project is for online trading on different items like gold, silver, zinc etc. there are so many different logics to implement, this project is for trade brokers.",
+      "type": "Freelance Work",
+      "skills": ["PHP", "MySql"]
+    }, {
+      "title": "School Management System",
+      "description": "This project is to manage all school level documentary work like, attendance, Examination, Marks, Parent notification, library management, etc.",
+      "type": "Freelance Work",
+      "skills": ["PHP", "MySql"]
+    }, {
+      "title": "JK Shah Test Series",
+      "description": "This project is for online examination application for  C.A. (chartered accountant)",
+      "type": "Local Project",
+      "skills": ["PHP", "Laravel", "MySql", "Payment", "CCAvanue"]
+    }, {
+      "title": "Ne14glf",
+      "description": "This project is for social networking application for  golf players and related people.",
+      "type": "Freelance Project",
+      "skills": ["PHP", "CodeIgniter", "MySql", "Payment", "Paypal"]
+    }
+  ],
+  "experience": [{
+    "employer": "Improwised Technologies Pvt. Ltd.",
+    "website": "https://www.improwised.com",
+    "city": "Rajkot",
+    "state": "Gujrat",
+    "country": "India",
+    "designation": "Software Engineer",
+    "from": "06-01-2012",
+    "to": "10-31-2012",
+    "skills": ["NodeJS", "ExpressJS", "Git", "Github"]
+    }, {
+      "employer": "Canvass",
+      "website": "https://canvass.in",
+      "city": "Mumbai",
+      "state": "Maharastra",
+      "country": "India",
+      "designation": "Software Design Engineer",
+      "from": "04-25-2013",
+      "to": "05-31-2014",
+      "skills": ["Java", "Struts", "Hibernate", "Git", "Heroku"]
+    }, {
+      "employer": "CodeGeeks",
+      "website": "https://codegeeks.in",
+      "city": "Rajkot",
+      "state": "Gujrat",
+      "country": "India",
+      "designation": "Co-Founder",
+      "from": "06-01-2014",
+      "to": "04-15-2017",
+      "skills": []
+    }, {
+      "employer": "DevRepublic",
+      "website": "https://devrepublic.nl",
+      "city": "Ahmedabad",
+      "state": "Gujrat",
+      "country": "India",
+      "designation": "Sr. Software Engineer",
+      "from": "04-17-2017",
+      "to": "09-30-2018",
+      "skills": ["Laravel", "PHP", "Git", "Github"]
+    }, {
+      "employer": "Improwised Technologies Pvt. Ltd.",
+      "website": "https://www.improwised.com",
+      "city": "Rajkot",
+      "state": "Gujrat",
+      "country": "India",
+      "designation": "Sr. Software Engineer",
+      "from": "04-01-2019",
+      "skills": ["Laravel", "Python", "FastAPI", "Scrapy", "NodeJS", "Go-lang"]
+    }]
+}

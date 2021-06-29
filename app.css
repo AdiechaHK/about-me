@@ -1,0 +1,19 @@
+.skill {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.skill::after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: green;
+  transition: .3s all ease-in;
+}
+.skill:hover::after {
+  width: var(--fill);
+}
