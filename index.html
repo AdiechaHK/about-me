@@ -23,10 +23,15 @@
 </head>
 <body class="bg-gradient-to-r from-green-200 via-blue-200 to-red-200">
 	<div id="app" class="px-1">
-		<div class="header container mx-auto mt-5 md:flex bg-gray-100 rounded-xl p-8 md:p-0 overflow-hidden shadow-lg">
-			<img class="object-cover w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto md:mx-0 md:inline-block" src="/images/harikrushna.jpeg" alt="Image of Harikrushna" >
+		<div v-if="Object.keys(profile).length === 0" class="text-5xl text-center mx-auto mt-10 pt-10 space-y-10">
+			<div><i class="animate-spin fas fa-slash"></i></div>
+			<div class="animate-pulse">-- Loading profile --</div>
+		</div>
+		<div v-cloak v-if="Object.keys(profile).length !== 0">
+		<div class="header container mx-auto mt-5 md:flex border-b border-gray-400 p-8 md:p-0">
+			<img class="object-cover w-32 h-32 mb-4 md:w-48 md:h-auto md:rounded-xl rounded-full mx-auto md:mx-0 md:inline-block" src="/images/harikrushna.jpeg" alt="Image of Harikrushna" >
 			<div class="pt-6 md:p-8 text-center md:text-left inline-block">
-				<h3 class="text-5xl font-bold mb-4 text-blue-600" style="text-shadow: 1px 1px 5px #999;">Harikrushna V. Adiecha </h3>
+				<h3 class="text-5xl font-bold mb-4 text-blue-600" style="text-shadow: 1px 1px 5px #999;">{{ profile.name }}</h3>
 				<div class="text-green-800 mb-0 font-bold">
 					{{ profile.designation }}
 				</div>
@@ -34,31 +39,30 @@
 					At {{ profile.employer }}, {{ profile.city }}
 				</div>
 				<div class="text-sm text-gray-700 mt-2 space-x-4" v-if="profile.contact">
-					<span v-if="profile.contact.mobile">
+					<div class="inline-block" v-if="profile.contact.mobile">
 						
 						<a class="text-gray-500 hover:text-blue-600" :href="profile.contact.mobile|mob_link">
 							<i class="mr-1 fas fa-phone-alt"></i>
 							{{profile.contact.mobile}}
 						</a>
-					</span>
-					<span v-if="profile.contact.email">
+					</div>
+					<div class="inline-block" v-if="profile.contact.email">
 						<a class="text-gray-500 hover:text-blue-600" :href="profile.contact.email|mail_link">
 							<i class="mr-1 fas fa-envelope"></i>
 							{{profile.contact.email}}
 						</a>
-					</span>
+					</div>
 				</div>
 			</div>
 		</div>
-
 		<div class="container mx-auto my-5 grid grid-cols-3 md:grid-cols-4 gap-4">
-			<div class="col-span-3 sm:col-span-1 space-y-4">
-				<div class="p-4 rounded-xl shadow-lg bg-gray-200 ">
+			<div class="col-span-3 sm:col-span-1 space-y-4 border-r border-gray-400">
+				<div class="p-4 ">
 					<h4 class="text-xl text-gray-700 mb-3">Technical Skills</h4>
 					<div
 						v-for="(detail, group) in profile.skills"
 						:key="group"
-						class="hover:bg-gray-100 p-3 -mx-4 -my-2"
+						class="hover:bg-gray-100 rounded-xl p-3 -mx-4 -my-2"
 						:title="group+' skils' | ucfirst">
 						<p class="px-2 mb-2 underline">{{group | ucfirst}}</p>
 						<div
@@ -73,10 +77,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="p-4 rounded-xl shadow-lg bg-gray-200" v-if="profile.hobbies && profile.hobbies.length">
+				<div class="p-4 border-gray-400 border-t-2" v-if="profile.about_me">
 					<h4 class="ml-1 text-xl text-gray-700 mb-3">About me</h4>
 					<div class="py-1 m-1 text-gray-500">{{profile.about_me}}</div>
-					<div class="social border-t border-gray-500 pt-2 mt-1 px-4 space-x-2 text-center">
+					<div class="social border-t border-gray-400 pt-2 mt-1 px-4 space-x-2 text-center">
 						<a
 							class="facebook"
 							href="https://www.facebook.com/adiecha.harikrushna/"
@@ -109,7 +113,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="p-4 rounded-xl shadow-lg bg-gray-200" v-if="profile.hobbies && profile.hobbies.length">
+				<div class="p-4 border-gray-400 border-t-2" v-if="profile.hobbies && profile?.hobbies?.length">
 					<h4 class="ml-1 text-xl text-gray-700 mb-3">Likes</h4>
 					<div
 						v-for="hobby in profile.hobbies"
@@ -120,18 +124,15 @@
 				</div>
 			</div>
 			<div class="space-y-4 sm:col-span-2 col-span-3 md:col-span-3">
-				<div class="rounded-xl shadow-lg bg-gray-200">
-					<div class="float-right inline-block pt-4 pr-4">
-						Total: 
-						<div class="inline-block px-2 py-0 rounded-lg bg-gray-300 text-gray-500">{{ total_exp | period }}</div>
-					</div>
-					<h4 class="text-xl text-gray-700 mb-4 pt-4 pl-4">Experience</h4>
+				<div class="rounded-xl">
+					<h4 class="text-xl text-gray-700 mb-4 pt-4 pl-4 underline inline-block">Experience</h4>
+					<div class="inline-block px-2 py-0 rounded-lg bg-gray-500 text-gray-300 ml-4">{{ total_exp | period }}</div>
 					<div
 						v-for="(exp, indx) in sorted_experience"
 						:key="indx"
 						v-show="indx < limit || show_experiences == 'all'"
-						class="duration-300 rounded-b-xl space-y-2 p-4 border-t border-gray-400 pt-2 hover:bg-gray-100">
-						<div class="float-right inline-block px-2 py-0 rounded-lg bg-gray-300 text-gray-500">{{ exp | months | period }}</div>
+						class="duration-300 rounded-xl space-y-2 p-4 pt-2 hover:bg-gray-200">
+						<div class="float-right inline-block px-2 py-0 rounded-lg bg-gray-400 text-white">{{ exp | months | period }}</div>
 						<h5 class="text-gray-800 text-lg font-bold">{{exp.designation}}</h5>
 						<div class="text-gray-600">
 							At
@@ -150,28 +151,25 @@
 						</div>
 					</div>
 					<div
-						v-if="sorted_experience.length > limit || sorted_experience.length === 0"
-						class="rounded-b-xl space-y-2 p-4 border-t border-gray-400 pt-2 text-center">
-						<div v-if="sorted_experience.length > limit">
-							<button v-if="show_experiences!='all'" @click="show_experiences='all'" class="outline-none border hover:shadow-lg hover:bg-gray-100 duration-300 hover:border-blue-600 hover:text-blue-600 text-gray-500 px-4 py-2 rounded-lg">Show all</button>
-							<button v-if="show_experiences=='all'" @click="show_experiences='limited'" class="outline-none border hover:shadow-lg hover:bg-gray-100 duration-300 hover:border-blue-600 hover:text-blue-600 text-gray-500 px-4 py-2 rounded-lg">Show less</button>
+						v-if="sorted_experience?.length > limit || sorted_experience?.length === 0"
+						class="rounded-b-xl space-y-2 p-4 mt-2 border-t border-gray-400 pt-2 text-center">
+						<div v-if="sorted_experience?.length > limit">
+							<button v-if="show_experiences!='all'" @click="show_experiences='all'" class="outline-none border-transparent border hover:shadow-lg hover:bg-gray-100 duration-300 hover:border-blue-600 hover:text-blue-600 text-gray-500 px-4 py-2 rounded-lg">Show all experiences</button>
+							<button v-if="show_experiences=='all'" @click="show_experiences='limited'" class="outline-none border-transparent border hover:shadow-lg hover:bg-gray-100 duration-300 hover:border-blue-600 hover:text-blue-600 text-gray-500 px-4 py-2 rounded-lg">Show less experiences</button>
 						</div>
-						<div v-if="sorted_experience.length === 0">
+						<div v-if="sorted_experience?.length === 0">
 							--- No Experience to Show ---
 						</div>
 					</div>
 				</div>
-				<div class="rounded-xl shadow-lg bg-gray-200" v-if="profile.projects">
-					<div class="float-right inline-block pt-4 pr-4">
-						Projects: 
-						<div class="inline-block px-2 py-0 rounded-lg bg-gray-300 text-gray-500">{{ filtered_projects.length }}</div>
-					</div>
-					<h4 class="text-xl text-gray-700 mb-4 pt-4 pl-4">Projects</h4>
+				<div class="border-t-2 border-gray-400" v-if="profile.projects">
+					<h4 class="inline-block  text-xl text-gray-700 mb-4 pt-4 pl-4 underline">Projects</h4>
+					<div class="inline-block ml-4 px-2 py-0 rounded-lg bg-gray-500 text-gray-300">{{ filtered_projects.length }}</div>
 					<div
 						v-for="(project, indx) in filtered_projects"
 						:key="indx"
 						v-show="indx < limit || show_projects == 'all'"
-						class="duration-300 rounded-b-xl space-y-2 p-4 border-t border-gray-400 pt-2 hover:bg-gray-100">
+						class="duration-300 rounded-xl space-y-2 p-4 pt-2 hover:bg-gray-100 ">
 						<div class="float-right inline-block px-2 py-0 rounded-lg bg-gray-300 text-gray-500">{{ project.type }} </div>
 						<h5 class="text-gray-800 text-lg font-bold">{{ project.title }}</h5>
 						<div class="text-gray-600">
@@ -185,23 +183,23 @@
 						</div>
 					</div>
 					<div
-						v-if="filtered_projects.length > limit ||filtered_projects.length === 0"
-						class="rounded-b-xl space-y-2 p-4 border-t border-gray-400 pt-2 text-center">
-						<div v-if="filtered_projects.length > limit">
-							<button v-if="show_projects!='all'" @click="show_projects='all'" class="outline-none border hover:shadow-lg hover:bg-gray-100 duration-300 hover:border-blue-600 hover:text-blue-600 text-gray-500 px-4 py-2 rounded-lg">Show all</button>
-							<button v-if="show_projects=='all'" @click="show_projects='limited'" class="outline-none border hover:shadow-lg hover:bg-gray-100 duration-300 hover:border-blue-600 hover:text-blue-600 text-gray-500 px-4 py-2 rounded-lg">Show less</button>
+						v-if="filtered_projects?.length > limit ||filtered_projects?.length === 0"
+						class="rounded-b-xl space-y-2 p-4 border-t border-gray-400 pt-2 text-center mt-2">
+						<div v-if="filtered_projects?.length > limit">
+							<button v-if="show_projects!='all'" @click="show_projects='all'" class="outline-none border-transparent border hover:shadow-lg hover:bg-gray-100 duration-300 hover:border-blue-600 hover:text-blue-600 text-gray-500 px-4 py-2 rounded-lg">Show all projects</button>
+							<button v-if="show_projects=='all'" @click="show_projects='limited'" class="outline-none border-transparent border hover:shadow-lg hover:bg-gray-100 duration-300 hover:border-blue-600 hover:text-blue-600 text-gray-500 px-4 py-2 rounded-lg">Show less projects</button>
 						</div>
-						<div v-if="filtered_projects.length === 0">
+						<div v-if="filtered_projects?.length === 0">
 							--- No Projects to Show ---
 						</div>
 					</div>
 				</div>
-				<div class="rounded-xl shadow-lg bg-gray-200">
-					<h4 class="pl-4 pt-4 text-xl text-gray-700 mb-4">Education</h4>
+				<div class="border-gray-400 border-t-2">
+					<h4 class="pl-4 pt-4 text-xl text-gray-700 mb-4 underline">Education</h4>
 					<div
 						v-for="edu in profile.education"
 						:key="edu.passing_year"
-						class="p-4 space-y-2 mb-4 border-t border-gray-400">
+						class="p-4 space-y-2 mb-4">
 						<h5 class="text-gray-800 text-lg font-bold">{{edu.degree}}</h5>
 						<div class="text-gray-500">
 						Passed out in <div class="inline-block px-2 py-0 rounded-lg bg-gray-300 text-gray-500">{{edu.passing_year}}</div>
@@ -213,7 +211,7 @@
 				</div>
 			</div>
 		</div>
-
+		</div>
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

@@ -17,3 +17,7 @@
 .skill:hover::after {
   width: var(--fill);
 }
+
+[v-cloak] {
+  display: none;
+}

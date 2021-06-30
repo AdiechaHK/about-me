@@ -51,10 +51,9 @@ const app = new Vue({
     limit: 3
   },
   mounted: async function() {
-    // const profileUpdate = () => this.profile = {name: "Harikrushna"}
-    // setTimeout(profileUpdate, 3000)
-    res = await axios.get('/profile.json')
+    let res = await axios.get('/profile.json')
     this.profile = res.data
+    console.log(this.profile)
   },
   methods: {
     toggleSkill(s) {
@@ -64,13 +63,16 @@ const app = new Vue({
   },
   computed: {
     sorted_experience() {
-      return this.profile.experience?.sort((a, b) => {
-        return moment(b.from).diff(moment(a.from));
-      })?.filter(exp => {
-        return this.skills.length === 0 || exp.skills?.reduce((cond, skill) => {
-          return cond || this.skills.includes(skill);
-        }, false);
-      });
+      if(this.profile && this.profile.experience && this.profile.experience.length > 0) {
+        return this.profile.experience?.sort((a, b) => {
+          return moment(b.from).diff(moment(a.from));
+        })?.filter(exp => {
+          return this.skills?.length === 0 || exp.skills?.reduce((cond, skill) => {
+            return cond || this.skills.includes(skill);
+          }, false);
+        });
+      }
+      return [];
     },
     filtered_projects() {
       return this.profile.projects?.filter(exp => {
