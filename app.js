@@ -75,11 +75,14 @@ const app = new Vue({
       return [];
     },
     filtered_projects() {
-      return this.profile.projects?.filter(exp => {
-        return this.skills.length === 0 || exp.skills?.reduce((cond, skill) => {
-          return cond || this.skills.includes(skill);
-        }, false);
-      })
+      if(this.profile && this.profile.projects && this.profile.projects.length > 0) {
+        return this.profile.projects?.sort((a, b) => b.year - a.year)?.filter(proj => {
+          return this.skills.length === 0 || proj.skills?.reduce((cond, skill) => {
+            return cond || this.skills.includes(skill);
+          }, false);
+        })
+      }
+      return []
     },
     total_exp() {
       return this.sorted_experience?.reduce((texp, exp) => texp + get_diff(exp), 0) || 0;

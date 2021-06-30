@@ -247,8 +247,8 @@
     }, {
       "title": "IPromote-CTM",
       "description": "This is a service portal that provides a centralized way to get provision virtual numbers from different service provider.",
-      "year": 2017,
-      "months_worked": 4,
+      "year": 2020,
+      "months_worked": 8,
       "team_size": 3,
       "role": "Fullstack",
       "skills": ["PHP", "Laravel", "MySql", "CircleCI", "AutomatedTesting"]
