@@ -6,7 +6,7 @@ Vue.filter('ucfirst', input => {
 });
 
 Vue.filter('dt', input => {
-  return input ? moment(input).format("MMM YYYY"): "now"
+  return input ? moment(input, "MM-DD-YYYY").format("MMM YYYY"): "now"
 });
 
 Vue.filter('period', (input, no_per = "No experience") => {
@@ -22,8 +22,8 @@ Vue.filter('period', (input, no_per = "No experience") => {
 });
 
 const get_diff = ({from, to}) => {
-  let from_dt = moment(from)
-  let to_dt = moment(to)
+  let from_dt = moment(from, "MM-DD-YYYY")
+  let to_dt = moment(to, "MM-DD-YYYY")
   return to_dt.diff(from_dt, 'months', true)
 }
 
@@ -65,7 +65,7 @@ const app = new Vue({
     sorted_experience() {
       if(this.profile && this.profile.experience && this.profile.experience.length > 0) {
         return this.profile.experience?.sort((a, b) => {
-          return moment(b.from).diff(moment(a.from));
+          return moment(b.from, "MM-DD-YYYY").diff(moment(a.from, "MM-DD-YYYY"));
         })?.filter(exp => {
           return this.skills?.length === 0 || exp.skills?.reduce((cond, skill) => {
             return cond || this.skills.includes(skill);
