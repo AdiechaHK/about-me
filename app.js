@@ -22,8 +22,8 @@ Vue.filter('period', (input, no_per = "No experience") => {
 });
 
 const get_diff = ({from, to}) => {
-  let from_dt = moment(from, "MM-DD-YYYY")
-  let to_dt = moment(to, "MM-DD-YYYY")
+  let from_dt = from ? moment(from, "MM-DD-YYYY"): moment()
+  let to_dt = to ? moment(to, "MM-DD-YYYY"): moment()
   return to_dt.diff(from_dt, 'months', true)
 }
 
