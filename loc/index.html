@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Location tracker</title>
+  <style>
+    /* Always set the map height explicitly to define the size of the div
+    * element that contains the map. */
+    #map {
+      height: calc(100% - 70px);
+    }
+
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .float-left {
+      display: inline-block;
+    }
+    .float-right {
+      float: right;
+    }
+
+    .data-container {
+      line-height: 70px;
+      font-size: 30px;
+    }
+
+    .btn:hover {
+      background-color: gray;
+      color: white;
+      box-shadow: -4px 3px 10px gray;
+    }
+    .btn.active {
+      background-color: lightgrey;
+    }
+    .btn {
+      transition: all .2s ease-in;
+      margin: 10px;
+      outline: none;
+      background: none;
+      border: 1px solid gray;
+      border-radius: 4px;
+      font-size: 20px;
+      padding: 5px 12px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="data-container">
+    <div class="float-left" id="data"></div>
+    <button id="small" class="float-right btn active">Small</button>
+    <button id="medium" class="float-right btn">Medium</button>
+    <button id="large" class="float-right btn">Large</button>
+  </div>
+  <audio src="alert.wav" loop></audio>
+  <div id="map"></div>
+
+  <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+  <script src="index.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?callback=initMap&libraries=&v=weekly"
+    async
+  ></script>
+
+
+</body>
+</html>
