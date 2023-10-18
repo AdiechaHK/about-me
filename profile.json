@@ -263,15 +263,15 @@
     }
   ],
   "experience": [{
-    "employer": "Improwised Technologies Pvt. Ltd.",
-    "website": "https://www.improwised.com",
-    "city": "Rajkot",
-    "state": "Gujrat",
-    "country": "India",
-    "designation": "Software Engineer",
-    "from": "06-01-2012",
-    "to": "10-31-2012",
-    "skills": ["NodeJS", "ExpressJS", "Git", "Github"]
+      "employer": "Improwised Technologies Pvt. Ltd.",
+      "website": "https://www.improwised.com",
+      "city": "Rajkot",
+      "state": "Gujrat",
+      "country": "India",
+      "designation": "Software Engineer",
+      "from": "06-01-2012",
+      "to": "10-31-2012",
+      "skills": ["NodeJS", "ExpressJS", "Git", "Github"]
     }, {
       "employer": "Canvass",
       "website": "https://canvass.in",
@@ -310,6 +310,16 @@
       "country": "India",
       "designation": "Sr. Software Engineer",
       "from": "04-01-2019",
+      "to": "07-06-2022",
       "skills": ["PHP", "Laravel", "Python", "FastAPI", "Scrapy", "NodeJS", "Go-lang", "Git", "Github", "Gitlab", "GitlabCI", "CircleCI", "Docker", "DockerHub", "AWS-S3", "AWS-SQS", "ApachePulsar", "Minio", "ApacheTika", "AutomatedTesting", "MySql", "PostgreSql", "ElasticSearch"]
+    }, {
+      "employer": "Enstead.",
+      "website": "https://enstead.com/",
+      "city": "Ahmedabad",
+      "state": "Gujrat",
+      "country": "India",
+      "designation": "Sr. Software Engineer (Remote)",
+      "from": "15-06-2022",
+      "skills": ["PHP", "Laravel", "Git", "Github", "MySql", "MongoDB", "NodeJS", "SocketIO"]
     }]
 }
