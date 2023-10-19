@@ -309,8 +309,8 @@
       "state": "Gujrat",
       "country": "India",
       "designation": "Sr. Software Engineer",
-      "from": "04-01-2019",
-      "to": "07-06-2022",
+      "from": "01-04-2019",
+      "to": "06-07-2022",
       "skills": ["PHP", "Laravel", "Python", "FastAPI", "Scrapy", "NodeJS", "Go-lang", "Git", "Github", "Gitlab", "GitlabCI", "CircleCI", "Docker", "DockerHub", "AWS-S3", "AWS-SQS", "ApachePulsar", "Minio", "ApacheTika", "AutomatedTesting", "MySql", "PostgreSql", "ElasticSearch"]
     }, {
       "employer": "Enstead.",
@@ -319,7 +319,7 @@
       "state": "Gujrat",
       "country": "India",
       "designation": "Sr. Software Engineer (Remote)",
-      "from": "15-06-2022",
+      "from": "06-15-2022",
       "skills": ["PHP", "Laravel", "Git", "Github", "MySql", "MongoDB", "NodeJS", "SocketIO"]
     }]
 }
