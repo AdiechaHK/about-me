@@ -1,0 +1,23 @@
+.header-cover {
+    width: 100vw;
+    /* z-index: -1; */
+    position: fixed;
+    height: fit-content;
+}
+
+.header-cover .bg {
+    background-image: url('hkbg.png');    
+    background-size: contain auto;
+    background-position: top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    /* z-index: 1; */
+}
+
+h1, h3, .dm-serif-display {
+    font-family: "DM Serif Display";
+}
+
+body {
+    font-family: "Quicksand";
+}
