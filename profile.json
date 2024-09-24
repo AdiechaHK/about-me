@@ -298,7 +298,7 @@
       "city": "Ahmedabad",
       "state": "Gujrat",
       "country": "India",
-      "designation": "Sr. Software Engineer",
+      "designation": "Sr. Software Engineer & Tech Lead",
       "from": "04-17-2017",
       "to": "09-30-2018",
       "skills": ["Laravel", "PHP", "Git", "Github", "Gitlab", "Imagick", "VueJS", "NodeJS", "ExpressJS", "SocketIO", "PeerJS"]
@@ -308,7 +308,7 @@
       "city": "Rajkot",
       "state": "Gujrat",
       "country": "India",
-      "designation": "Sr. Software Engineer",
+      "designation": "Sr. Software Engineer & Tech Lead",
       "from": "01-04-2019",
       "to": "06-07-2022",
       "skills": ["PHP", "Laravel", "Python", "FastAPI", "Scrapy", "NodeJS", "Go-lang", "Git", "Github", "Gitlab", "GitlabCI", "CircleCI", "Docker", "DockerHub", "AWS-S3", "AWS-SQS", "ApachePulsar", "Minio", "ApacheTika", "AutomatedTesting", "MySql", "PostgreSql", "ElasticSearch"]
@@ -318,7 +318,7 @@
       "city": "Ahmedabad",
       "state": "Gujrat",
       "country": "India",
-      "designation": "Sr. Software Engineer (Remote)",
+      "designation": "Technical Project Manager (Remote)",
       "from": "06-15-2022",
       "skills": ["PHP", "Laravel", "Git", "Github", "MySql", "MongoDB", "NodeJS", "SocketIO"]
     }]
